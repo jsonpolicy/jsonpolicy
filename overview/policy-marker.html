@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Policy Marker | JSON Policy</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    
+    <meta name="description" content="JSON Policy - Distributed Rule Engine">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="preload" href="/assets/css/0.styles.8968334b.css" as="style"><link rel="preload" href="/assets/js/app.c4123b23.js" as="script"><link rel="preload" href="/assets/js/2.d3ea8322.js" as="script"><link rel="preload" href="/assets/js/11.b3a8b447.js" as="script"><link rel="prefetch" href="/assets/js/10.5ee64c80.js"><link rel="prefetch" href="/assets/js/12.29061add.js"><link rel="prefetch" href="/assets/js/13.607e3aa6.js"><link rel="prefetch" href="/assets/js/14.8f8bcae9.js"><link rel="prefetch" href="/assets/js/15.e4a83481.js"><link rel="prefetch" href="/assets/js/16.bf02c3a1.js"><link rel="prefetch" href="/assets/js/17.5c717817.js"><link rel="prefetch" href="/assets/js/3.7c13d29b.js"><link rel="prefetch" href="/assets/js/4.b41e69dd.js"><link rel="prefetch" href="/assets/js/5.5bc5eaa4.js"><link rel="prefetch" href="/assets/js/6.e416f727.js"><link rel="prefetch" href="/assets/js/7.980d9cb6.js"><link rel="prefetch" href="/assets/js/8.39ee49f0.js"><link rel="prefetch" href="/assets/js/9.aba5de70.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8968334b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/logo.svg" alt="JSON Policy" class="logo"> <span class="site-name can-hide">JSON Policy</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/overview/" class="nav-link router-link-active">
+  Overview
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Libraries" class="dropdown-title"><span class="title">Libraries</span> <span class="arrow down"></span></button> <button type="button" aria-label="Libraries" class="mobile-dropdown-title"><span class="title">Libraries</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php-library/" class="nav-link">
+  PHP
+</a></li><li class="dropdown-item"><!----> <a href="/js-library/" class="nav-link">
+  JavaScript
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/overview/" class="nav-link router-link-active">
+  Overview
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Libraries" class="dropdown-title"><span class="title">Libraries</span> <span class="arrow down"></span></button> <button type="button" aria-label="Libraries" class="mobile-dropdown-title"><span class="title">Libraries</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php-library/" class="nav-link">
+  PHP
+</a></li><li class="dropdown-item"><!----> <a href="/js-library/" class="nav-link">
+  JavaScript
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Overview</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/overview/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/overview/policy-statement.html" class="sidebar-link">Policy Statement</a></li><li><a href="/overview/policy-param.html" class="sidebar-link">Policy Param</a></li><li><a href="/overview/policy-condition.html" class="sidebar-link">Policy Condition</a></li><li><a href="/overview/policy-marker.html" aria-current="page" class="active sidebar-link">Policy Marker</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/overview/policy-marker.html#type-casting" class="sidebar-link">Type Casting</a></li><li class="sidebar-sub-header"><a href="/overview/policy-marker.html#dynamic-mapping" class="sidebar-link">Dynamic Mapping</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="policy-marker"><a href="#policy-marker" class="header-anchor">#</a> Policy Marker</h1> <p>The marker is a way to inject dynamic values into a policy. Depending on the library, various markers are supported by default. However, it is really easy to add customer markers. You can find more details about this on the respective language library reference page.</p> <p>The marker is declared with the leading dollar sign <code>$</code> and wrapped in curly brackets <code>{…}</code>. It consists of two parts. The source of data (marker name) and data path delimited by a dot <code>.</code>. For example, if you need to get the current user’s email, you can use the <code>${USER.user_email}</code> marker.</p> <p>The data path can be complex to give you more flexibility to define its true nature. For example, you can use square brackets <code>[]</code> to access an array element by index or get a deeply nested property in the multi-level object. These are just a few examples of valid paths:</p> <ul><li><code>${CONTEXT.Players[0].profile.name}</code></li> <li><code>${USER.address[&quot;physical&quot;].zip}</code></li> <li><code>${MAP.Country[USA][NC][Charlotte]}</code></li> <li><code>${PURCHASE.0929431.amount}</code></li></ul> <p>Almost in all instances, a policy marker is expected to be a string unless it is explicitly <a href="#type-casting">type cast</a> to a different data type.</p> <p>Markers can be used for two main purposes:</p> <ul><li>Define dynamically <a href="/overview/policy-statement.html#resource">resources</a> or <a href="/overview/policy-param.html">params</a></li> <li>Inject dynamically values before evaluating <a href="/overview/policy-condition.html">conditions</a></li></ul> <p>The main difference is that resources and params are compiled once when JSON policy manager is instantiated and conditions are evaluated every single time JSON policy manager is invoked. That is why any conditional statement or param that contains dynamic markers, can be both applicable and not within the same application execution if dynamic markers' values changed.</p> <h2 id="type-casting"><a href="#type-casting" class="header-anchor">#</a> Type Casting</h2> <p>The typecasting is extremely important to improve the quality of conditions as it allows you to explicitly convert data points to very specific data types before condition evaluates.</p> <p>For developers that used to work with strongly typed programming languages (e.g. Java, C#, or C++), this is already second nature. However, for engineers that primarily focus on loosely typed languages (e.g. PHP or JavaScript), typecasting can be taken for granted as most of the time they do not have to worry about data types.</p> <p>Disregarding what is your background, it is strongly encouraged to typecast markers' values to expected data types especially within conditions. This will significantly reduce the chances of any unexpected logical bugs.</p> <p>By default JSON policy framework supports type casting fo the following data types:</p> <ul><li><code>(*string)</code> - convert value to string</li> <li><code>(*int)</code> - convert numeric value to integer</li> <li><code>(*float)</code> - convert decimal value to float</li> <li><code>(*bool)</code> or <code>(*boolean)</code> - convert boolean value representations (varies by language) to true or false</li> <li><code>(*array)</code> - convert value to array</li> <li><code>(*json)</code> - decode valid JSON string to array or object (depending on programming language)</li> <li><code>(*null)</code> - convert null or empty values to null</li> <li><code>(*date)</code> - convert value to date object</li> <li><code>(*ip)</code> - convert a readable IP address into a packed format</li></ul> <p>The custom typecasting can be easily added and for more information, check the respective language reference page.</p> <p>Most condition types that work with scalar operands (e.g. <a href="/overview/policy-condition.html#equals">Equals</a> or <a href="/overview/policy-condition.html#in">In</a>), do a literal comparison, that is why it is some important to make sure that values are typecasted accordingly.</p> <p>For example, the below statement will not be applicable without proper typecasting because HTTP query params are all strings.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Statement&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Effect&quot;</span><span class="token operator">:</span> <span class="token string">&quot;allow&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;Resource&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Page:hello-world&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;Equals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;(*int)${HTTP_QUERY.preview}&quot;</span><span class="token operator">:</span> <span class="token number">1</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="dynamic-mapping"><a href="#dynamic-mapping" class="header-anchor">#</a> Dynamic Mapping</h2> <p>From the policy <a href="/overview/policy-statement.html#resource">resources</a> or <a href="/overview/policy-param.html">params</a> you have the way to dynamically declare multiple instances from the array of scalar values.</p> <p>When JSON policy parser detects the reserved construct <code>=&gt;</code> then it assumes that the left side of the expression contains template name with <code>%s</code> part that is going to be replaced with each scalar value from the right side value.</p> <p>Let's analyze a couple of examples.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Param&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;Key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;country:%s:status =&gt; ${ARGS.active_countries}&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;active&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Some <code>active_countries</code> property that is fetched from the context may contain an array of country names like <code>Array(Sudan, Yemen, Turkey)</code> and JSON policy parser will declare 3 separate params accordingly. Based on this example, the equivalent for the above policy is the following one:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Param&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;Key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;country:Sudan:status&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;active&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;Key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;country:Yemen:status&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;active&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;Key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;country:Turkey:status&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;active&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>You can also declare an inline array of values to reduce the size of policies if you know ahead of all the desired values.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Param&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;Key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;player:position:%s =&gt; (*json)[1, 2, 3]&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Value&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/overview/policy-condition.html" class="prev">
+        Policy Condition
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.c4123b23.js" defer></script><script src="/assets/js/2.d3ea8322.js" defer></script><script src="/assets/js/11.b3a8b447.js" defer></script>
+  </body>
+</html>

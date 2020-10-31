@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Policy Condition | JSON Policy</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    
+    <meta name="description" content="JSON Policy - Distributed Rule Engine">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="preload" href="/assets/css/0.styles.8968334b.css" as="style"><link rel="preload" href="/assets/js/app.c4123b23.js" as="script"><link rel="preload" href="/assets/js/2.d3ea8322.js" as="script"><link rel="preload" href="/assets/js/10.5ee64c80.js" as="script"><link rel="prefetch" href="/assets/js/11.b3a8b447.js"><link rel="prefetch" href="/assets/js/12.29061add.js"><link rel="prefetch" href="/assets/js/13.607e3aa6.js"><link rel="prefetch" href="/assets/js/14.8f8bcae9.js"><link rel="prefetch" href="/assets/js/15.e4a83481.js"><link rel="prefetch" href="/assets/js/16.bf02c3a1.js"><link rel="prefetch" href="/assets/js/17.5c717817.js"><link rel="prefetch" href="/assets/js/3.7c13d29b.js"><link rel="prefetch" href="/assets/js/4.b41e69dd.js"><link rel="prefetch" href="/assets/js/5.5bc5eaa4.js"><link rel="prefetch" href="/assets/js/6.e416f727.js"><link rel="prefetch" href="/assets/js/7.980d9cb6.js"><link rel="prefetch" href="/assets/js/8.39ee49f0.js"><link rel="prefetch" href="/assets/js/9.aba5de70.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8968334b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/logo.svg" alt="JSON Policy" class="logo"> <span class="site-name can-hide">JSON Policy</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/overview/" class="nav-link router-link-active">
+  Overview
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Libraries" class="dropdown-title"><span class="title">Libraries</span> <span class="arrow down"></span></button> <button type="button" aria-label="Libraries" class="mobile-dropdown-title"><span class="title">Libraries</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php-library/" class="nav-link">
+  PHP
+</a></li><li class="dropdown-item"><!----> <a href="/js-library/" class="nav-link">
+  JavaScript
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/overview/" class="nav-link router-link-active">
+  Overview
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Libraries" class="dropdown-title"><span class="title">Libraries</span> <span class="arrow down"></span></button> <button type="button" aria-label="Libraries" class="mobile-dropdown-title"><span class="title">Libraries</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php-library/" class="nav-link">
+  PHP
+</a></li><li class="dropdown-item"><!----> <a href="/js-library/" class="nav-link">
+  JavaScript
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Overview</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/overview/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/overview/policy-statement.html" class="sidebar-link">Policy Statement</a></li><li><a href="/overview/policy-param.html" class="sidebar-link">Policy Param</a></li><li><a href="/overview/policy-condition.html" aria-current="page" class="active sidebar-link">Policy Condition</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/overview/policy-condition.html#operator" class="sidebar-link">Operator</a></li><li class="sidebar-sub-header"><a href="/overview/policy-condition.html#left-operand-naming-collision" class="sidebar-link">Left Operand Naming Collision</a></li><li class="sidebar-sub-header"><a href="/overview/policy-condition.html#equals" class="sidebar-link">Equals</a></li><li class="sidebar-sub-header"><a href="/overview/policy-condition.html#notequals" class="sidebar-link">NotEquals</a></li><li class="sidebar-sub-header"><a href="/overview/policy-condition.html#between" class="sidebar-link">Between</a></li><li class="sidebar-sub-header"><a href="/overview/policy-condition.html#greater" class="sidebar-link">Greater</a></li><li class="sidebar-sub-header"><a href="/overview/policy-condition.html#less" class="sidebar-link">Less</a></li><li class="sidebar-sub-header"><a href="/overview/policy-condition.html#greaterorequals" class="sidebar-link">GreaterOrEquals</a></li><li class="sidebar-sub-header"><a href="/overview/policy-condition.html#lessorequals" class="sidebar-link">LessOrEquals</a></li><li class="sidebar-sub-header"><a href="/overview/policy-condition.html#in" class="sidebar-link">In</a></li><li class="sidebar-sub-header"><a href="/overview/policy-condition.html#notin" class="sidebar-link">NotIn</a></li><li class="sidebar-sub-header"><a href="/overview/policy-condition.html#like" class="sidebar-link">Like</a></li><li class="sidebar-sub-header"><a href="/overview/policy-condition.html#notlike" class="sidebar-link">NotLike</a></li><li class="sidebar-sub-header"><a href="/overview/policy-condition.html#regex" class="sidebar-link">RegEx</a></li></ul></li><li><a href="/overview/policy-marker.html" class="sidebar-link">Policy Marker</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="policy-condition"><a href="#policy-condition" class="header-anchor">#</a> Policy Condition</h1> <p>Conditions are probably the most powerful aspect of the JSON policy framework as it gives the ability to make any statement or param conditional. They are evaluated at runtime and can take into consideration dynamic variables from the application context (environment variable, user identity, HTTP request, etc).</p> <p>The purpose of the conditions is to determine if any given statement or param is classified as applicable. This is done by evaluating all the types of conditions and returning a single boolean <code>true</code> if applicable.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Operator&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AND|OR&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;&lt;condition_type&gt;&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;Operator&quot;</span><span class="token operator">:</span> <span class="token string">&quot;AND|OR&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;&lt;left_operand&gt;&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;right_operand&gt;&quot;</span><span class="token punctuation">,</span>
+            ...
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        ...
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>By default, the framework supports a few types of conditions, however, it can easily be extended with custom types. For more information please refer to the respective language library reference page.</p> <p>To eliminate any misunderstandings, in this section I'm using the following terms to describe certain aspects of the policy conditions:</p> <ul><li>&quot;Type&quot; is the condition type like <code>Equals</code>, <code>In</code> or <code>Regex</code></li> <li>&quot;Operand&quot; is either the left or the right part of the condition pair within a group. For example, in the sample condition below, the left operand is <code>${USER.email}</code> and the right operand is <code>*@gmail.com</code></li> <li>&quot;Group&quot; is the set of conditions of the same type. For example below is the &quot;Like&quot; group.</li></ul> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    ...
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Like&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${USER.email}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;*@gmail.com&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;${USER.fullname}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;John*&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The <code>Condition</code> attribute may contain more than one type of condition.</p> <h2 id="operator"><a href="#operator" class="header-anchor">#</a> Operator</h2> <ul><li>Type: <code>String</code></li> <li>Default Value: <code>AND</code></li> <li>Supported Values: <code>AND</code>, <code>OR</code></li> <li><em>Optional</em></li></ul> <p>The <code>Operator</code> attribute defines the logical operator between condition types or within a specific group. If none specified, the default operator is <code>AND</code>.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Operator&quot;</span><span class="token operator">:</span> <span class="token string">&quot;OR&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;Equals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${DATATIME.D}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Mon&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;In&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${USER.email}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;admin@mydomain.com&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;editor@mydomain.com&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The above condition is evaluated to true if today is <code>Monday</code> or the user's email address is either <code>admin@mydomain.com</code> or <code>editor@mydomain.com</code>.</p> <p>As you might notice, a group may contain more than one condition and by default, the logical <code>AND</code> operator is used within the group. This way you can build conditions like &quot;If a user's first name starts with 'Ja' and the last name starts with 'Mor'&quot;. However, you can customize the logical operator with the <code>Operator</code> attribute.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Operator&quot;</span><span class="token operator">:</span> <span class="token string">&quot;OR&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;Like&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;Operator&quot;</span><span class="token operator">:</span> <span class="token string">&quot;OR&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;${USER.first_name}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Ja*&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;${USER.last_name}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Mor*&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;In&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${USER.status}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;pastdue&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;pending&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The above conditions check if the user's first name starts with <code>Ja</code> or the last name starts with <code>Mor</code>, or the user's status is either <code>pastdue</code> or <code>pending</code>.</p> <h2 id="left-operand-naming-collision"><a href="#left-operand-naming-collision" class="header-anchor">#</a> Left Operand Naming Collision</h2> <p>Because policies are defined as JSON documents, you cannot have two exactly named left operands within the same scope. For example, if you want to cover the condition like &quot;If user's city equals London or Dubai&quot;, the following condition <strong>is not going to work</strong>:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Equals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${USER.city}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;London&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;${USER.city}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Dubai&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Depending on the programming language, the above condition will be parsed to check only for one city (either <code>London</code> or <code>Dubai</code>).</p> <p>To mitigate the left operand naming collision, you can define the right operand as an array of values.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Equals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${USER.city}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;London&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;Dubai&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="equals"><a href="#equals" class="header-anchor">#</a> Equals</h2> <ul><li>Type: <code>ConditionObject</code></li></ul> <p>Check if the left and the right operands are identical (contain the same value and type of value). When <a href="/overview/policy-marker.html">dynamic markers</a> are used, you should consider applying <a href="/overview/policy-marker.html#type-casting">typecasting</a>.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Equals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${HTTP_GET.ref}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;qa2020&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;(*bool)${SESSION.is_authenticated}&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The condition above checks if HTTP query param <code>ref</code> equals to <code>qa2020</code> and user session's property <code>is_authenticated</code> equals to boolean <code>true</code> value.</p> <p>The right operand may contain a single scalar value or array of scalar values. In the second case, the condition will be evaluated to <code>true</code> if the left operand matches at least one value in the array.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Equals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${USER.city}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;London&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;Dubai&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The &quot;Equals&quot; group type may also contain more than one condition. Each condition is evaluated independently and merged together with the logical operator that is defined within the group (the default logical operator is <code>AND</code>).</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Equals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;Operator&quot;</span><span class="token operator">:</span> <span class="token string">&quot;OR&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;${USER.city}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;London&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;Dubai&quot;</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;${USER.name}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Bruce Lee&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The condition above returns <code>true</code> if a user's city is <code>London</code> or <code>Dubai</code>, or the user's name is <code>Bruce Lee</code>.</p> <h2 id="notequals"><a href="#notequals" class="header-anchor">#</a> NotEquals</h2> <ul><li>Type: <code>ConditionObject</code></li></ul> <p>Check if the left and the right operands are not identical (either contain different values or type of values mismatch). When <a href="/overview/policy-marker.html">dynamic markers</a> are used, you should consider applying <a href="/overview/policy-marker.html#type-casting">typecasting</a>.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;NotEquals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${USER.name}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;John Dawn&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The right operand may contain a single scalar value or array of scalar values. In the second case, the condition will be evaluated to <code>true</code> if the left operand does not have the exact match to any value in the array.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;NotEquals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${BOAT.color}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;red&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;blue&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>In the same way, as with the <a href="/overview/policy-condition.html#equals">Equals</a> type, the <code>NotEquals</code> may contain more than one condition and they are evaluated and merged with the logical operator the same way.</p> <h2 id="between"><a href="#between" class="header-anchor">#</a> Between</h2> <ul><li>Type: <code>Object</code></li></ul> <p>Check if the left operand is within one or more ranges defined in the right operand. This type of condition does not take into consideration value type and depending on the programming language, the value dynamically casts before comparison.</p> <p>The &quot;range&quot; is described by two values <code>[min, max]</code> and the condition evaluates if the given value is greater or equals to <code>min</code> and lower or equals to <code>max</code>.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Between&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${USER.age}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token number">13</span><span class="token punctuation">,</span>
+                <span class="token number">20</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>In case there is a need to compare against multiple ranges, you can define an array of ranges in the right operand as following:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Between&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${DATETIME.H}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span>
+                <span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">]</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The above statement checks if the current hour is between <code>12am</code> and <code>6am</code> or <code>6pm</code> and <code>11pm</code>.</p> <p>The <code>Between</code> group type may contain more than one condition. They are evaluated independently and merged with the logical operator defined in the <a href="/overview/policy-condition.html#operator">Operator</a> property.</p> <h2 id="greater"><a href="#greater" class="header-anchor">#</a> Greater</h2> <ul><li>Type: <code>ConditionObject</code></li></ul> <p>Check if the left operand is greater than the right operand. The comparing values type cast automatically by the programming language of your choice.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Greater&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;2020&quot;</span><span class="token operator">:</span> <span class="token string">&quot;${TASK.year_created}&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The right operand may contain a single scalar value or array of scalar values. In the second case, the condition evaluates to <code>true</code> if the left operand is greater than at least one value in the array.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Greater&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;2020-10-01&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;2020-11-01&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;2020-09-17&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The above condition is evaluated to <code>true</code> because <code>2020-10-01</code> is greater than <code>2020-09-17</code>.</p> <h2 id="less"><a href="#less" class="header-anchor">#</a> Less</h2> <ul><li>Type: <code>ConditionObject</code></li></ul> <p>Check if the left operand is less than the right operand. The comparing values type cast automatically by the programming language of your choice.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Less&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${ASSIGNMENT.rate}&quot;</span><span class="token operator">:</span> <span class="token number">300.25</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The right operand may contain a single scalar value or array of scalar values. In the second case, the condition evaluates to <code>true</code> if the left operand is less than at least one value in the array.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Less&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;2020&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;2021&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;2019&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The above condition is evaluated to <code>true</code> because <code>2020</code> is less than <code>2021</code>.</p> <h2 id="greaterorequals"><a href="#greaterorequals" class="header-anchor">#</a> GreaterOrEquals</h2> <ul><li>Type: <code>ConditionObject</code></li></ul> <p>Check if the left operand is greater or equals than the right operand. The comparing values type cast automatically by the programming language of your choice.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;GreaterOrEquals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${Cargo.weight}&quot;</span><span class="token operator">:</span> <span class="token number">6500</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The right operand may contain a single scalar value or array of scalar values. In the second case, the condition evaluates to <code>true</code> if the left operand is greater or equals to at least one value in the array.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;GreaterOrEquals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;F&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;A&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;Z&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The above condition is evaluated to <code>true</code> because <code>F</code> char is greater than <code>A</code>.</p> <h2 id="lessorequals"><a href="#lessorequals" class="header-anchor">#</a> LessOrEquals</h2> <ul><li>Type: <code>ConditionObject</code></li></ul> <p>Check if the left operand is less or equals to the right operand. The comparing values type cast automatically by the programming language of your choice.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;LessOrEquals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${USER.age}&quot;</span><span class="token operator">:</span> <span class="token number">20</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The right operand may contain a single scalar value or array of scalar values. In the second case, the condition evaluates to <code>true</code> if the left operand is less or equals to at least one value in the array.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;LessOrEquals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${PACKAGE.weight}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token number">10</span><span class="token punctuation">,</span>
+                <span class="token number">30.5</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="in"><a href="#in" class="header-anchor">#</a> In</h2> <ul><li>Type: <code>ConditionObject</code></li></ul> <p>Check if the left operand is included in the array of values from the right operand. This type of condition checks for the identical match (both value and value type has to be identical).</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;In&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${BOT.name}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;google&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;yahoo&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;${ENV.allowed_bot}&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="notin"><a href="#notin" class="header-anchor">#</a> NotIn</h2> <ul><li>Type: <code>ConditionObject</code></li></ul> <p>Check if the left operand is not included in the array of values from the right operand. This type of condition checks for the identical match (both value and value type has to be identical).</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;NotIn&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${UserEntity.username}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;(*array)${DB.suspended_users}&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The condition above assumes that some database instance contains an array of suspended usernames and the <code>(*array)</code> <a href="/overview/policy-marker.html#type-casting">type case</a> reassures that the right operand is actually the array of values.</p> <h2 id="like"><a href="#like" class="header-anchor">#</a> Like</h2> <ul><li>Type: <code>ConditionObject</code></li></ul> <p>Check if the left operand is similar to the defined pattern in the right operand. The pattern should contain a string where the <code>*</code> asterisk represents any characters.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Like&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${OS.version}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;19.0.*&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p><strong>FYI!</strong> The pattern does not really have to have the <code>*</code> asterisk in it. If none specified, then the condition behaves similarly to the <a href="/overview/policy-condition.html#equals">Equals</a> condition type where it compares two string.</p></blockquote> <p>The right operand may contain a single scalar value or array of scalar values. In the second case, the condition evaluates to <code>true</code> if the left operand is similar or equals to at least one value in the array.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Like&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;access&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;ac*ss&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;role&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>The above condition is evaluated to <code>true</code> because the <code>access</code> string matches the <code>ac*ss</code> pattern.</p> <h2 id="notlike"><a href="#notlike" class="header-anchor">#</a> NotLike</h2> <ul><li>Type: <code>ConditionObject</code></li></ul> <p>Check if the left operand is not similar to the defined pattern in the right operand. The pattern should contain a string where the <code>*</code> asterisk represents any characters.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;NotLike&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${ENV.environment}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;staging-*&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p><strong>FYI!</strong> The pattern does not really have to have the <code>*</code> asterisk in it. If none specified, then the condition behaves similarly to the <a href="/overview/policy-condition.html#notequals">NotEquals</a> condition type where it compares two string.</p></blockquote> <p>The right operand may contain a single scalar value or array of scalar values. In the second case, the condition evaluates to <code>true</code> if the left operand is not similar or equals to all values in the array.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;NoLike&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${USER.name}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;John*&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;Mel*a&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="regex"><a href="#regex" class="header-anchor">#</a> RegEx</h2> <ul><li>Type: <code>ConditionObject</code></li></ul> <p>Check if the left operand matches the regular expression defined in the right operand.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;RegEx&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${ORDER.uid}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^PO[\\d]{10}$&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>In case you need to define a regular expression's flag(s), you can wrap the regex with two forward slashes <code>/</code> trailing with one or more flags (e.g. <code>g</code>, <code>i</code>, <code>m</code>, etc.). For example, the following condition defines a case-insensitive match for the value that may contain multiple newlines.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Condition&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;RegEx&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;${CUSTOMER.full_name}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/^[\\w\\'-]+$/im&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/overview/policy-param.html" class="prev">
+        Policy Param
+      </a></span> <span class="next"><a href="/overview/policy-marker.html">
+        Policy Marker
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.c4123b23.js" defer></script><script src="/assets/js/2.d3ea8322.js" defer></script><script src="/assets/js/10.5ee64c80.js" defer></script>
+  </body>
+</html>
